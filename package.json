@@ -1,0 +1,28 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Test endpoint to drive urls",
+  "main": "index.js",
+  "app": {
+    "manifest": {
+      "service_worker": "network_or_cache"
+    },
+    "frameworks": [
+      "framework7"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tag": "git add . && git commit -m \"Checking in latest\" && npm version patch && git add . && git commit -m \"Checking in version patch git push\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andymonis/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andymonis/test/issues"
+  },
+  "homepage": "https://github.com/andymonis/test#readme"
+}

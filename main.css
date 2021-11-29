@@ -1,0 +1,5 @@
+body {background-color:white; overscroll-behavior:none;}
+.section-header {background-color:rgb(238 238 238 / 100%);}
+.section-body {background-color:white}
+.section-footer {background-color:rgb(238 238 238 / 100%);}
+.section-header, .section-footer { height:64px; }

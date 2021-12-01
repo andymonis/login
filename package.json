@@ -8,7 +8,8 @@
       "service_worker": "network_or_cache"
     },
     "frameworks": [
-      "framework7"
+      "knockout",
+      "tailwindcss-devonly-then-recompile-for-size"
     ]
   },
   "scripts": {

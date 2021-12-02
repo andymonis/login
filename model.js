@@ -24,14 +24,23 @@ let Model = {
     signin_click_auth: async function(){
         this.signin.error(false);
 
+        // Get Username and Encrypt Password
         let username = this.signin.username();
         let password = this.signin.password();
-
         let encrypted = await Utils.hash(password);
-        let res = await this.api.$post("/authorize", { username:username, password:encrypted });
+        
+        // Get redirect (if exists)
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        let redirect = params.redirect ? params.redirect : "";
+        
+        // Post results to authorize
+        let res = await this.api.$post("/authorize", { username:username, password:encrypted, redirect:redirect });
 
+        // Handle the response, and redirect if neccessary
         console.log(res)
         if (res && res.status === "ok") {
+            // Redirect
             window.location.assign(res.url);
         } else {
             // Raise error

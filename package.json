@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "name": "test",
   "version": "1.0.4",
   "description": "Test endpoint to drive urls",
@@ -6,24 +7,34 @@
   "app": {
     "manifest": {
       "service_worker": "network_or_cache"
+=======
+    "name": "test",
+    "version": "1.0.3",
+    "description": "Test endpoint to drive urls",
+    "main": "index.js",
+    "app": {
+        "manifest": {
+            "service_worker": "network_or_cache"
+        },
+        "frameworks": [
+            "knockout",
+            "tailwindcss-devonly-then-recompile-for-size"
+        ]
+>>>>>>> Stashed changes
     },
-    "frameworks": [
-      "knockout",
-      "tailwindcss-devonly-then-recompile-for-size"
-    ]
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tag": "git add . && git commit -m \"Checking in latest\" && npm version patch && git add . && git commit -m \"Checking in version patch\" && git push"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andymonis/test.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andymonis/test/issues"
-  },
-  "homepage": "https://github.com/andymonis/test#readme"
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "commit": "git add . && git commit -m 'Checking in latest' && git push",
+        "tag": "npm --no-git-tag-version version patch && npm run commit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andymonis/test.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andymonis/test/issues"
+    },
+    "homepage": "https://github.com/andymonis/test#readme"
 }

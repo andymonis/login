@@ -1,15 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "name": "test",
-  "version": "1.0.4",
-  "description": "Test endpoint to drive urls",
-  "main": "index.js",
-  "app": {
-    "manifest": {
-      "service_worker": "network_or_cache"
-=======
     "name": "test",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "Test endpoint to drive urls",
     "main": "index.js",
     "app": {
@@ -20,7 +11,6 @@
             "knockout",
             "tailwindcss-devonly-then-recompile-for-size"
         ]
->>>>>>> Stashed changes
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

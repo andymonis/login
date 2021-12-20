@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-GB" style="overflow-y: scroll; overscroll-behavior-y: none; font-size: 15px;">
-  <head>
+
+<head>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -8,17 +9,18 @@
     <!-- Color theme for statusbar (Android only) -->
     <meta name="theme-color" content="#2196f3">
     <!-- Your app title -->
-    <title>Me</title>
-  </head>
-  <body>
-    
+    <title>Login</title>
+</head>
+
+<body>
+
     <!-- 
       Signin 
     -->
     <main data-bind="visible:$data.view()==='signin'" class="signin form-signin">
-      <form>
-        <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-        <svg class="w-full" viewBox="0 0 193 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+        <form>
+            <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <svg class="w-full" viewBox="0 0 193 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
           <g transform="matrix(1,0,0,1,-136.864,-159.289)">
               <g>
               <text
@@ -39,55 +41,57 @@
               </g>
           </g>
       </svg>
-        <h1 class="h3 text-center mb-3 fw-normal">Please sign in</h1>
-    
-        <div class="form-floating">
-          <div class="pl-4-safe border-b flex items-center ">
-            <div class="pr-4-safe w-full relative hairline-b py-2.5">
-              <div class="text-xs  duration-200">Username</div>
-              <div class="relative -mb-2.5">
-                <input data-bind="value:$data.signin.username" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name" value="">
-              </div>
+            <h1 class="h3 text-center mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+                <div class="pl-4-safe border-b flex items-center ">
+                    <div class="pr-4-safe w-full relative hairline-b py-2.5">
+                        <div class="text-xs  duration-200">Username</div>
+                        <div class="relative -mb-2.5">
+                            <input data-bind="value:$data.signin.username" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name"
+                                value="">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="form-floating">
-          <div class="mt-4 pl-4-safe border-b flex items-center ">
-            <div class="pr-4-safe w-full relative hairline-b py-2.5">
-              <div class="text-xs  duration-200">Password</div>
-              <div class="relative -mb-2.5">
-                <input data-bind="value:$data.signin.password" type="password" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name" value="">
-              </div>
+            <div class="form-floating">
+                <div class="mt-4 pl-4-safe border-b flex items-center ">
+                    <div class="pr-4-safe w-full relative hairline-b py-2.5">
+                        <div class="text-xs  duration-200">Password</div>
+                        <div class="relative -mb-2.5">
+                            <input data-bind="value:$data.signin.password" type="password" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text"
+                                placeholder="Your name" value="">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-    
-        <div data-bind="css:{'hidden':!$data.signin.error()}" class="checkbox mb-3 hidden">
-          <label class="text-red-500 text-xs">
+
+            <div data-bind="css:{'hidden':!$data.signin.error()}" class="checkbox mb-3 hidden">
+                <label class="text-red-500 text-xs">
             Username of password invalid, please try again.
           </label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
             <!-- <input type="checkbox" value="remember-me"> Remember me -->
           </label>
-        </div>
-        <div class="text-center">
-          <button data-bind="click:signin_click_auth" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">signin</button>
-          <button data-bind="click:signin_click_signup" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">register</button>
-          <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
-        </div>
-      </form>
+            </div>
+            <div class="text-center">
+                <button data-bind="click:signin_click_auth" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">signin</button>
+                <button data-bind="click:signin_click_signup" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">register</button>
+                <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+            </div>
+        </form>
     </main>
     <!-- /Signin -->
 
     <!-- 
       SignUp 
     -->
-    <main  data-bind="visible:$data.view()==='signup'" class="signin form-signin" style="display:none">
-      <form>
-        <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-        <svg class="w-full" viewBox="0 0 193 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+    <main data-bind="visible:$data.view()==='signup'" class="signin form-signin" style="display:none">
+        <form>
+            <!-- <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <svg class="w-full" viewBox="0 0 193 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
           <g transform="matrix(1,0,0,1,-136.864,-159.289)">
               <g>
               <text
@@ -108,43 +112,46 @@
               </g>
           </g>
       </svg>
-        <h1 class="h3 text-center mb-3 fw-normal">Please complete to register</h1>
-    
-        <div class="form-floating">
-          <div class="pl-4-safe flex items-center ">
-            <div class="pr-4-safe w-full relative hairline-b py-2.5">
-              <div class="text-xs  duration-200">Username</div>
-              <div class="relative -mb-2.5">
-                <input data-bind="value:$data.signup.username" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name" value="">
-              </div>
+            <h1 class="h3 text-center mb-3 fw-normal">Please complete to register</h1>
+
+            <div class="form-floating">
+                <div class="pl-4-safe flex items-center ">
+                    <div class="pr-4-safe w-full relative hairline-b py-2.5">
+                        <div class="text-xs  duration-200">Username</div>
+                        <div class="relative -mb-2.5">
+                            <input data-bind="value:$data.signup.username" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name"
+                                value="">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="form-floating">
-          <div class="mt-4 pl-4-safe flex items-center ">
-            <div class="pr-4-safe w-full relative hairline-b py-2.5">
-              <div class="text-xs  duration-200">Password</div>
-              <div class="relative -mb-2.5">
-                <input data-bind="value:$data.signup.password" type="password" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your name" value="">
-              </div>
+            <div class="form-floating">
+                <div class="mt-4 pl-4-safe flex items-center ">
+                    <div class="pr-4-safe w-full relative hairline-b py-2.5">
+                        <div class="text-xs  duration-200">Password</div>
+                        <div class="relative -mb-2.5">
+                            <input data-bind="value:$data.signup.password" type="password" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text"
+                                placeholder="Your name" value="">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div data-bind="css:{'hidden':!$data.signup.error()}" class="checkbox mb-3 hidden">
-          <label data-bind="text:$data.signup.error_msg()" class="text-red-500 text-xs"><!-- message--></label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
+            <div data-bind="css:{'hidden':!$data.signup.error()}" class="checkbox mb-3 hidden">
+                <label data-bind="text:$data.signup.error_msg()" class="text-red-500 text-xs"><!-- message--></label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
             <!-- <input type="checkbox" value="remember-me"> Remember me -->
           </label>
-        </div>
-        <div class="text-center">
-          <button data-bind="click:signup_click_register" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
-          <button data-bind="click:signup_click_cancel" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">Cancel</button>
-          <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
-        </div>
-      </form>
+            </div>
+            <div class="text-center">
+                <button data-bind="click:signup_click_register" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
+                <button data-bind="click:signup_click_cancel" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">Cancel</button>
+                <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+            </div>
+        </form>
     </main>
     <!-- /SignUp -->
-  </body>
+</body>
+
 </html>

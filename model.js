@@ -18,24 +18,24 @@ let Model = {
     },
 
     // Methods
-    signin_click_signup: function(){
+    signin_click_signup: function() {
         this.route("signup");
     },
-    signin_click_auth: async function(){
+    signin_click_auth: async function() {
         this.signin.error(false);
 
         // Get Username and Encrypt Password
         let username = this.signin.username();
         let password = this.signin.password();
-        let encrypted = await Utils.hash(password);
-        
+        // let encrypted = await Utils.hash(password);
+
         // Get redirect (if exists)
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
         let redirect = params.redirect ? params.redirect : "";
-        
+
         // Post results to authorize
-        let res = await this.api.$post("/authorize", { username:username, password:encrypted, redirect:redirect });
+        let res = await this.api.$post("/authorize", { username: username, password: password, redirect: redirect });
 
         // Handle the response, and redirect if neccessary
         console.log(res)
@@ -47,17 +47,17 @@ let Model = {
             this.signin.error(true);
         }
     },
-    signup_click_cancel: function(){
+    signup_click_cancel: function() {
         this.route("signin");
     },
-    signup_click_register: async function(){
+    signup_click_register: async function() {
         this.signin.error(false);
 
         let username = this.signup.username();
         let password = this.signup.password();
 
         let encrypted = await Utils.hash(password);
-        let res = await this.api.$post("/register", { username:username, password:encrypted });
+        let res = await this.api.$post("/register", { username: username, password: encrypted });
 
         console.log(res)
         if (res && res.status === "ok") {
@@ -68,7 +68,7 @@ let Model = {
             this.signup.error_msg(res.message)
         }
     },
-    route: function(path){
+    route: function(path) {
         this.view(path);
     }
 }

@@ -78,7 +78,7 @@
             <div class="text-center">
                 <button data-bind="click:signin_click_auth" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">signin</button>
                 <button data-bind="click:signin_click_signup" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">register</button>
-                <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+                <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
             </div>
         </form>
     </main>
@@ -124,6 +124,17 @@
                 </div>
             </div>
             <div class="form-floating">
+                <div class="pl-4-safe flex items-center ">
+                    <div class="pr-4-safe w-full relative hairline-b py-2.5">
+                        <div class="text-xs  duration-200">Email</div>
+                        <div class="relative -mb-2.5">
+                            <input data-bind="value:$data.signup.email" class="block text-base appearance-none w-full focus:outline-none bg-transparent  h-11 placeholder-black placeholder-opacity-30 dark:placeholder-white dark:placeholder-opacity-30" type="text" placeholder="Your email"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating">
                 <div class="mt-4 pl-4-safe flex items-center ">
                     <div class="pr-4-safe w-full relative hairline-b py-2.5">
                         <div class="text-xs  duration-200">Password</div>
@@ -145,7 +156,7 @@
             <div class="text-center">
                 <button data-bind="click:signup_click_register" class="bg-v3-500 hover:bg-v3-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
                 <button data-bind="click:signup_click_cancel" class="bg-transparent hover:bg-gray-200 text-v3-500 font-semibold py-2 px-4 hover:border-transparent rounded-full">Cancel</button>
-                <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+                <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
             </div>
         </form>
     </main>

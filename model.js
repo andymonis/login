@@ -1,4 +1,6 @@
-import Utils from "./utils.js";
+/**
+ * 
+ */
 
 let Model = {
     api: undefined,
@@ -13,6 +15,7 @@ let Model = {
     signup: {
         username: ko.observable(""),
         password: ko.observable(""),
+        email: ko.observable(""),
         error: ko.observable(false),
         error_msg: ko.observable("")
     },
@@ -27,7 +30,6 @@ let Model = {
         // Get Username and Encrypt Password
         let username = this.signin.username();
         let password = this.signin.password();
-        // let encrypted = await Utils.hash(password);
 
         // Get redirect (if exists)
         const urlSearchParams = new URLSearchParams(window.location.search);
@@ -52,12 +54,11 @@ let Model = {
     },
     signup_click_register: async function() {
         this.signin.error(false);
-
         let username = this.signup.username();
         let password = this.signup.password();
+        let email = this.signup.email();
 
-        let encrypted = await Utils.hash(password);
-        let res = await this.api.$post("/register", { username: username, password: encrypted });
+        let res = await this.api.$post("/register", { username: username, password: password, email: email });
 
         console.log(res)
         if (res && res.status === "ok") {

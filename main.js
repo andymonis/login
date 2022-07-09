@@ -16,8 +16,7 @@ export default class Main {
      * @param {*} params
      */
     async init(params) {
-        console.log("Hello knockout");
-
+        // console.log("Hello knockout");
         ko.applyBindings(Model);
     }
 }
